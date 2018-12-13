@@ -1,4 +1,5 @@
 ![SBURB preview image](https://i.imgur.com/3X19LEL.png)
+*(click on it for full-size picture)*
 
 # SpaceX Booster Use/Reuse Beholder (SBURB)
 
