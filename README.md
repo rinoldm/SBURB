@@ -1,4 +1,4 @@
-![SBURB preview image](https://i.imgur.com/3X19LEL.png)
+![SBURB preview mode 2](https://i.imgur.com/3X19LEL.png "Mode 2")
 *(click on it for full-size picture)*
 
 # SpaceX Booster Use/Reuse Beholder (SBURB)
@@ -17,6 +17,10 @@ This script only takes one argument, `mode`, which can be `0`, `1`, or `2`.
 * `0` shows the launches from all the cores.
 * `1` shows the launches from the Falcon 1 cores, the Falcon 9 v1.0 cores (B0001 to B0007) and the Falcon 9 v1.1 cores (B1001 to B1018).
 * `2` shows the launches from the Falcon 9 Full Thrust cores (B1019 to the latest core).
+
+| Mode 0 | Mode 1 | Mode 2 | 
+| ------ | ------ | ------ |
+|![SBURB preview mode 0](https://cdn.discordapp.com/attachments/436210080686276610/522728345889144843/mode_0.png "Mode 0") | ![SBURB preview mode 1](https://cdn.discordapp.com/attachments/436210080686276610/522728347822718976/mode_1.png "Mode 1") | ![SBURB preview mode 2](https://cdn.discordapp.com/attachments/436210080686276610/522728354735194112/mode_2.png "Mode 2")|
 
 I somewhat arbitrarily made this division because "not much" happened in part `1`, as it was still the beginnings of SpaceX followed by the experimental phase of first stage landings, so I find part `2` to be a lot more interesting and exciting as it shows the first successful landings and then a fantastic progress in rapid reuse.
 
