@@ -28,10 +28,10 @@ legend = [
 	{'icons': [[colors['HEAVY'], 'black']                       ], 'label': "Falcon Heavy"},
 ]
 
-if len(sys.argv) != 2 or sys.argv[1].isdigit() == False or int(sys.argv[1]) not in {0, 1, 2}:
-	print("Usage : py sburb.py [mode]       with mode = 0, 1 or 2")
+if len(sys.argv) != 2 or str.lower(sys.argv[1]) not in {'all', 'f1', 'f9', 'ft'}:
+	print("Usage : py sburb.py [mode]       with mode = all, F1, F9 or FT (case-insensitive)")
 	exit()
-mode = int(sys.argv[1])
+mode = str.lower(sys.argv[1])
 
 def getCoreNumbers():
 	return [core.number for core in cores]

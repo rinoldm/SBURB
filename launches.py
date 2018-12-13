@@ -17,7 +17,7 @@ class Launch:
 
 data.launches = []	
 
-if (data.mode == 0 or data.mode == 1):
+if (data.mode in {'all', 'f1'}):
 	data.launches += [
 		Launch("2006-03-24", ["F1-01"], RUD=True),
 		
@@ -27,7 +27,10 @@ if (data.mode == 0 or data.mode == 1):
 		Launch("2008-09-28", ["F1-04"]),
 		
 		Launch("2009-07-14", ["F1-05"]),
-
+	]
+	
+if (data.mode in {'all', 'f9'}):
+	data.launches += [
 		Launch("2010-06-04", ["B0003"], landings=[["Land (parachutes)", False]]),
 		Launch("2010-12-08", ["B0004"], landings=[["Land (parachutes)", False]]),
 
@@ -67,8 +70,8 @@ if (data.mode == 0 or data.mode == 1):
 
 		Launch("2016-01-17", ["B1017"], landings=[["JRTI", False]]),
 	]
-
-if (data.mode == 0 or data.mode == 2):
+	
+if (data.mode in {'all', 'ft'}):
 	data.launches += [
 		Launch("2015-12-21", ["B1019"], landings=[["LZ-1", True]]),
 		

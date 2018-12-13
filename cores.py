@@ -8,14 +8,17 @@ class Core:
 	
 data.cores = []
 
-if (data.mode == 0 or data.mode == 1):
+if (data.mode in {'all', 'f1'}):
 	data.cores += [
 		Core("F1-01", "Falcon 1"),
 		Core("F1-02", "Falcon 1"),
 		Core("F1-03", "Falcon 1"),
 		Core("F1-04", "Falcon 1"),
 		Core("F1-05", "Falcon 1"),
-		
+	]
+	
+if (data.mode in {'all', 'f9'}):
+	data.cores += [
 		Core("B0001", "Falcon 9 v1.0"),
 		Core("B0002", "Falcon 9 v1.0"),
 		Core("B0003", "Falcon 9 v1.0"),
@@ -41,10 +44,10 @@ if (data.mode == 0 or data.mode == 1):
 		Core("B1015", "Falcon 9 v1.1"),
 		Core("B1016", "Falcon 9 v1.1"),
 		Core("B1017", "Falcon 9 v1.1"),
-		Core("B1018", "Falcon 9 v1.1"),
+		Core("B1018", "Falcon 9 v1.1"),	
 	]
 	
-if (data.mode == 0 or data.mode == 2):
+if (data.mode in {'all', 'ft'}):
 	data.cores += [
 		Core("B1019", "F9 FT Block 1"),
 		Core("B1020", "F9 FT Block 1"),

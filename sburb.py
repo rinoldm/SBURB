@@ -30,11 +30,11 @@ def setAxes():
 				transform = transforms.blended_transform_factory(axes.transAxes, axes.transData))
 			)
 	
-	if data.mode != 2:
+	if data.mode in {'all', 'f1'}:
 		axes.set_xlim(left = data.spaceXCreationDate - datetime.timedelta(365 / 4))
 		axes.axvline(x = data.spaceXCreationDate, linestyle = '--', color = 'green')
 	
-	if data.mode != 1:
+	if data.mode in {'all', 'ft'}:
 		axes.axvline(x = datetime.date.today(), linestyle = '--', color = 'blue')
 				
 	firstCores = data.getFirstCores()
@@ -84,7 +84,7 @@ def plotReuse():
 				x1 = mdates.date2num(coreLaunches[i])
 				x2 = mdates.date2num(coreLaunches[i + 1])
 				plotReuseRect(core,	x1,	x2 - x1)
-				if data.mode == 2:
+				if data.mode == 'ft':
 					plt.gca().text((x1 + x2) / 2, data.getCoreNumbers().index(core) - 0.3, int(x2 - x1), color = data.colors['DAYS'], horizontalalignment = 'center', verticalalignment = 'top', size = 9)
 
 			if core in data.getActiveCoreNumbers():

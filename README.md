@@ -1,4 +1,4 @@
-![SBURB preview mode 2](https://i.imgur.com/3X19LEL.png "Mode 2")
+![SBURB preview mode FT](https://i.imgur.com/3X19LEL.png "Mode FT")
 *(click on it for full-size picture)*
 
 # SpaceX Booster Use/Reuse Beholder (SBURB)
@@ -13,16 +13,19 @@ You need to have Python 3 and Matplotlib installed.
 py sburb.py [mode]
 ```
 
-This script only takes one argument, `mode`, which can be `0`, `1`, or `2`.
-* `0` shows the launches from all the cores.
-* `1` shows the launches from the Falcon 1 cores, the Falcon 9 v1.0 cores (B0001 to B0007) and the Falcon 9 v1.1 cores (B1001 to B1018).
-* `2` shows the launches from the Falcon 9 Full Thrust cores (B1019 to the latest core).
+This script only takes one argument, `mode`, which can be `all`, `F1`, `F9` or `FT` (case-insensitive).
+* `all` shows the launches from all the cores.
+* `F1` shows the launches from the Falcon 1 cores.
+* `F9` shows the launches from the Falcon 9 v1.0 cores (B0001 to B0007) and the Falcon 9 v1.1 cores (B1001 to B1018).
+* `FT` shows the launches from the Falcon 9 Full Thrust cores (B1019 to the latest core).
 
-| Mode 0 | Mode 1 | Mode 2 | 
-| ------ | ------ | ------ |
-|![SBURB preview mode 0](https://cdn.discordapp.com/attachments/436210080686276610/522728345889144843/mode_0.png "Mode 0") | ![SBURB preview mode 1](https://cdn.discordapp.com/attachments/436210080686276610/522728347822718976/mode_1.png "Mode 1") | ![SBURB preview mode 2](https://cdn.discordapp.com/attachments/436210080686276610/522728354735194112/mode_2.png "Mode 2")|
+| Mode all | Mode F1 |
+|:--------:|:-------:|
+| ![SBURB preview mode all](https://i.imgur.com/fx1dm2X.png "Mode all") | ![SBURB preview mode F1](https://i.imgur.com/aiYvMt6.png "Mode F1") |
+| **Mode F9** | **Mode FT** | 
+| ![SBURB preview mode F9](https://i.imgur.com/QGMSkrZ.png "Mode F9") | ![SBURB preview mode FT](https://i.imgur.com/3G8a8Dq.png "Mode FT") |
 
-I somewhat arbitrarily made this division because "not much" happened in part `1`, as it was still the beginnings of SpaceX followed by the experimental phase of first stage landings, so I find part `2` to be a lot more interesting and exciting as it shows the first successful landings and then a fantastic progress in rapid reuse.
+I somewhat arbitrarily made this division because "not much" happened in part `F1` as it was the beginnings of SpaceX, and part `F9` was still the experimental phase of first stage landings, so I find part `FT` to be a lot more interesting and exciting as it shows the first successful landings and then a fantastic progress in rapid reuse.
 
 As more cores are built and more launches happen, they can be added simply by adding new entries in the lists of cores and launches in `cores.py` and `launches.py` respectively.
 
@@ -30,4 +33,4 @@ As more cores are built and more launches happen, they can be added simply by ad
 
 * **Documentation of early cores :** unfortunately, while the events of each launch are easy to verify, the cores used before Falcon 9 Full Thrust (before B1019) are not known with certainty, as they weren't painted on the rocket or otherwise publicized. If you look at any public source, you'll see that most of these cores are marked as "presumed" or just unknown. Therefore, keep in mind that the correspondance between launches and individual cores pre-Full Thrust shown by this tool is only an approximation and may be inaccurate.
 
-* **Hardcoding :** not only was I not very familiar with either Python or Matplotlib, my priority here was to make something that would look pretty as a chart, not elegant code. More particularly, I wanted to have the best result with mode `2` in a maximized window on my screen. As such, most of the visuals are hardcoded so that it looks best in this particular scenario, and other modes and window sizes will most likely look a bit off. This problem concerns : the size of the icons, the size of the font for the core numbers on the left axis and for the number of days in the reuse rectangles, the spacing between the left axis and the core version names, and the width of the Falcon Heavy rectangle. I may or may not try to fix those in the future.
+* **Hardcoding :** not only was I not very familiar with either Python or Matplotlib, my priority here was to make something that would look pretty as a chart, not elegant code. More particularly, I wanted to have the best result with mode `FT` in a maximized window on my screen. As such, most of the visuals are hardcoded so that it looks best in this particular scenario, and other modes and window sizes will most likely look a bit off. This problem concerns : the size of the icons, the size of the font for the core numbers on the left axis and for the number of days in the reuse rectangles, the spacing between the left axis and the core version names, and the width of the Falcon Heavy rectangle. I may or may not try to fix those in the future.
