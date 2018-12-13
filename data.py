@@ -18,14 +18,14 @@ colors = {
 }
 
 legend = [
-	{'icons': [[colors['EXPENDED'],	'o']							],	'label': "No landing"},
-	{'icons': [[colors['HOP'],		'o'], 	[colors['HOP'],		'X']],	'label': "Grasshopper hop"},
-	{'icons': [[colors['OCEAN'],	'o'], 	[colors['OCEAN'],	'X']],	'label': "Ocean landing"},
-	{'icons': [[colors['RTLS'],		'o'],	[colors['RTLS'],	'X']],	'label': "RTLS landing"},
-	{'icons': [[colors['ASDS'],		'o'],	[colors['ASDS'], 	'X']],	'label': "ASDS landing"},
-	{'icons': [							 	[colors['RUD'],		'X']],	'label': "RUD"},
-	{'icons': [[colors['REUSE'],	'none']							],	'label': "Reuse"},
-	{'icons': [[colors['HEAVY'],	'black']						],	'label': "Falcon Heavy"},
+	{'icons': [[colors['EXPENDED'], 'o']                        ], 'label': "No landing"},
+	{'icons': [[colors['HOP'],      'o'], [colors['HOP'],   'X']], 'label': "Grasshopper hop"},
+	{'icons': [[colors['OCEAN'],    'o'], [colors['OCEAN'], 'X']], 'label': "Ocean landing"},
+	{'icons': [[colors['RTLS'],     'o'], [colors['RTLS'],  'X']], 'label': "RTLS landing"},
+	{'icons': [[colors['ASDS'],     'o'], [colors['ASDS'],  'X']], 'label': "ASDS landing"},
+	{'icons': [                           [colors['RUD'],   'X']], 'label': "RUD"},
+	{'icons': [[colors['REUSE'], 'none']                        ], 'label': "Reuse"},
+	{'icons': [[colors['HEAVY'], 'black']                       ], 'label': "Falcon Heavy"},
 ]
 
 mode = int(sys.argv[1])

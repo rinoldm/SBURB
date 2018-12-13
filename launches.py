@@ -42,7 +42,7 @@ if (data.mode == 0 or data.mode == 1):
 		Launch("2013-04-17", ["B0002"], landings=[["McGregor", True]], hop=True),
 		Launch("2013-06-14", ["B0002"], landings=[["McGregor", True]], hop=True),
 		Launch("2013-08-13", ["B0002"], landings=[["McGregor", True]], hop=True),
-		Launch("2013-09-29", ["B1003"], landings=[["Ocean",	False]]),
+		Launch("2013-09-29", ["B1003"], landings=[["Ocean", False]]),
 		Launch("2013-10-07", ["B0002"], landings=[["McGregor", True]], hop=True),
 		Launch("2013-12-03", ["B1004"]),
 
