@@ -18,14 +18,17 @@ colors = {
 }
 
 legend = [
-	{'icons': [[colors['EXPENDED'], 'o']                        ], 'label': "No landing"},
-	{'icons': [[colors['HOP'],      'o'], [colors['HOP'],   'X']], 'label': "Grasshopper hop"},
-	{'icons': [[colors['OCEAN'],    'o'], [colors['OCEAN'], 'X']], 'label': "Ocean landing"},
-	{'icons': [[colors['RTLS'],     'o'], [colors['RTLS'],  'X']], 'label': "RTLS landing"},
-	{'icons': [[colors['ASDS'],     'o'], [colors['ASDS'],  'X']], 'label': "ASDS landing"},
-	{'icons': [                           [colors['RUD'],   'X']], 'label': "RUD"},
-	{'icons': [[colors['REUSE'], 'none']                        ], 'label': "Reuse"},
-	{'icons': [[colors['HEAVY'], 'black']                       ], 'label': "Falcon Heavy"},
+	{'icons': [[colors['EXPENDED'], 'black', 'o']], 'label': "No landing"},
+	{'icons': [[colors['HOP'], 'black', 'o']], 'label': "Grasshopper hop"},
+	{'icons': [[colors['OCEAN'], 'black', 'o']], 'label': "Ocean landing"},
+	{'icons': [[colors['RTLS'], 'black', 'o']], 'label': "RTLS landing"},
+	{'icons': [[colors['ASDS'],  'black', 'o']], 'label': "ASDS landing"},
+	{'icons': [['none', 'red', 'o']],    'label': "Failed landing"},
+	{'icons': [[colors['RUD'], 'red', 'x']],    'label': "RUD"},
+	{'icons': [['none', 'black', '^']],    'label': "Dragon"},
+	{'icons': [['none', 'black', '*']],    'label': "Starlink"},
+	{'icons': [[colors['REUSE'], 'none', 'none']], 'label': "Reuse"},
+	{'icons': [[colors['HEAVY'], 'none', 'black']], 'label': "Falcon Heavy"},
 ]
 
 if len(sys.argv) != 2 or str.lower(sys.argv[1]) not in {'all', 'f1', 'f9', 'ft'}:
@@ -51,9 +54,7 @@ def getLaunchesByCore(core):
 		
 def pickLaunchColor(launch, landingIndex):
 	location = launch.landings[landingIndex][0]
-	if (launch.RUD == True):
-		color = colors['RUD']
-	elif (launch.hop == True):
+	if (launch.hop == True):
 		color = colors['HOP']
 	elif (location in {"No attempt"}):
 		color = colors['EXPENDED']

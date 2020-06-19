@@ -49,9 +49,9 @@ def setLegend():
 	for entry in data.legend:
 		entrytuple = []
 		for icon in entry['icons']:
-			(iconColor, iconStyle) = (icon[0], icon[1])
-			if iconStyle in {'o', 'X'}:
-				entrytuple.append(mlines.Line2D([], [], color = iconColor, marker = iconStyle, linestyle = 'None', markersize = 10, markeredgewidth = 0.5, markeredgecolor = 'black'))
+			(iconColor, iconEdgeColor, iconStyle) = (icon[0], icon[1], icon[2])
+			if iconStyle in {'o', 'x', '^', '*'}:
+				entrytuple.append(mlines.Line2D([], [], color = iconColor, marker = iconStyle, linestyle = 'None', markersize = 10, markeredgewidth = 0.5, markeredgecolor = iconEdgeColor))
 			else:
 				entrytuple.append(patches.Patch(facecolor = iconColor, edgecolor = iconStyle))
 		legend.append(tuple(entrytuple))
@@ -101,18 +101,38 @@ def plotLaunches():
 			dataPoints.append({	'x': launch.date,
 								'y': data.getCoreNumbers().index(landing['core']),
 								'c': data.pickLaunchColor(launch, landings.index(landing)),
-								'success': not launch.RUD and landing['success']})
+								'Dragon': launch.Dragon,
+								'Starlink': launch.Starlink,
+								'RUD': launch.RUD,
+								'success': landing['success']})
 		if len(launch.cores) > 1:
 			plotFalconHeavy(launch)
 			
-	plt.scatter(x = [point['x'] for point in dataPoints if point['success']],
-				y = [point['y'] for point in dataPoints if point['success']],
-				c = [point['c'] for point in dataPoints if point['success']],
-				marker = 'o', s = 170, linewidth = 0.5, edgecolors = 'black', zorder = 3)
-	plt.scatter(x = [point['x'] for point in dataPoints if not point['success']],
-				y = [point['y'] for point in dataPoints if not point['success']],
-				c = [point['c'] for point in dataPoints if not point['success']],
-				marker = 'X', s = 170, linewidth = 0.5, edgecolors = 'black', zorder = 3)
+	plt.scatter(x = [point['x'] for point in dataPoints if not point['Dragon'] and not point['Starlink']],
+				y = [point['y'] for point in dataPoints if not point['Dragon'] and not point['Starlink']],
+				c = [point['c'] for point in dataPoints if not point['Dragon'] and not point['Starlink']],
+				edgecolors = ['black' if point['success'] else 'red' for point in dataPoints if not point['Dragon'] and not point['Starlink']],
+				linewidth = [0.5 if point['success'] else 1 for point in dataPoints if not point['Dragon'] and not point['Starlink']],
+				marker = 'o', s = 170, zorder = 3)
+				
+	plt.scatter(x = [point['x'] for point in dataPoints if point['Dragon'] and not point['Starlink']],
+				y = [point['y'] for point in dataPoints if point['Dragon'] and not point['Starlink']],
+				c = [point['c'] for point in dataPoints if point['Dragon'] and not point['Starlink']],
+				edgecolors = ['black' if point['success'] else 'red' for point in dataPoints if point['Dragon'] and not point['Starlink']],
+				linewidth = [0.5 if point['success'] else 1 for point in dataPoints if point['Dragon'] and not point['Starlink']],
+				marker = '^', s = 170, zorder = 3)
+				
+	plt.scatter(x = [point['x'] for point in dataPoints if point['Starlink']],
+				y = [point['y'] for point in dataPoints if point['Starlink']],
+				c = [point['c'] for point in dataPoints if point['Starlink']],
+				edgecolors = ['black' if point['success'] else 'red' for point in dataPoints if point['Starlink']],
+				linewidth = [0.5 if point['success'] else 1 for point in dataPoints if point['Starlink']],
+				marker = '*', s = 170, zorder = 3)
+
+	plt.scatter(x = [point['x'] for point in dataPoints if point['RUD']],
+				y = [point['y'] for point in dataPoints if point['RUD']],
+				c = 'red',
+				marker = 'x', s = 170, linewidth = 1, edgecolors = 'red', zorder = 3)
 	
 def main():
 	plotLaunches(), plotReuse()
