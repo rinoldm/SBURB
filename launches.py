@@ -151,7 +151,14 @@ if (data.mode in {'all', 'ft'}):
 		Launch("2020-05-30", ["B1058"], landings=[["OCISLY", True]], Dragon=True),
 		Launch("2020-06-04", ["B1049"], landings=[["JRTI", True]], Starlink=True),
 		Launch("2020-06-13", ["B1059"], landings=[["OCISLY", True]], Starlink=True),
+		Launch("2020-06-30", ["B1060"], landings=[["JRTI", True]]),
+		Launch("2020-07-20", ["B1058"], landings=[["JRTI", True]]),
+		Launch("2020-08-07", ["B1051"], landings=[["OCISLY", True]], Starlink=True),
+		Launch("2020-08-18", ["B1049"], landings=[["OCISLY", True]], Starlink=True),
+		Launch("2020-08-30", ["B1059"], landings=[["LZ-1", True]]),
 		#--------------------- Future launches ----------------------
-		Launch("2020-06-23", ["B1051"], Starlink=True),
-		Launch("2020-06-30", ["B1060"]),
+		Launch("2020-09-03", ["B1060"], Starlink=True),
+		Launch("2020-10-01", ["B1062"]),
+		Launch("2020-10-23", ["B1061"], Dragon=True),
+		Launch("2020-11-10", ["B1063"]),
 	]

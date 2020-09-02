@@ -97,4 +97,5 @@ if (data.mode in {'all', 'ft'}):
 		Core("B1060", "F9 FT Block 5", True),
 		Core("B1061", "F9 FT Block 5", True),
 		Core("B1062", "F9 FT Block 5", True),
+		Core("B1063", "F9 FT Block 5", True),
 	]
